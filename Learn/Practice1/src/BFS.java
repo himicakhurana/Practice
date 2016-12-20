@@ -1,0 +1,119 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class BFS {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in2 = new BufferedReader(
+				new InputStreamReader(System.in));
+		int t = Integer.parseInt(in2.readLine().trim());
+		mloop: for (int a0 = 0; a0 < t; a0++) {
+			String s;
+			s = in2.readLine();
+			String[] nodeEdge = s.trim().split(" ");
+			int noNodes = Integer.parseInt(nodeEdge[0].trim());
+			int noEdges = Integer.parseInt(nodeEdge[1].trim());
+			Map<Integer, Integer> nodeList = new TreeMap<Integer, Integer>();
+			Map<Integer, List<Integer>> gMap = new HashMap<Integer, List<Integer>>();
+			for (int i = 1; i <= noNodes; i++) {
+				nodeList.put(i, -1);
+
+			}
+			for (int i = 0; i < noEdges; i++) {
+				s = in2.readLine();
+				String[] edge = s.split(" ");
+				int start = Integer.parseInt(edge[0].trim());
+				int end = Integer.parseInt(edge[1].trim());
+
+				if (gMap.containsKey(start)) {
+					gMap.get(start).add(end);
+
+				} else {
+					List<Integer> endList = new ArrayList<Integer>();
+					endList.add(end);
+					gMap.put(start, endList);
+
+				}
+				if (gMap.containsKey(end)) {
+					gMap.get(end).add(start);
+
+				} else {
+					List<Integer> endList = new ArrayList<Integer>();
+					endList.add(start);
+					gMap.put(end, endList);
+
+				}
+
+			}
+			s = in2.readLine();
+			int start = Integer.parseInt(s.trim());
+			for (int x : gMap.get(start)) {
+				nodeList.put(x, 6);
+			}
+			for (int node : nodeList.keySet()) {
+				if (node != start && nodeList.get(node) == -1) {
+					int level = 1;
+					Set<Integer> explored = new HashSet<Integer>();
+
+					Queue<Integer> qu = new LinkedList<Integer>();
+					qu.add(start);
+					while (!qu.isEmpty()) {
+						int r = qu.remove();
+
+						if (r == node) {
+							int cost = level * 6;
+							if ((nodeList.get(node) == -1)
+									|| (nodeList.get(node) > cost && nodeList
+											.get(node) != -1)) {
+								nodeList.put(r, cost);
+
+								qu.clear();
+								break;
+							}
+						}
+						if (!explored.contains(r)) {
+							for (int p : gMap.get(r)) {
+
+								if (p == node) {
+									int cost = level * 6;
+									if ((nodeList.get(node) == -1)
+											|| (nodeList.get(node) > cost && nodeList
+													.get(node) != -1)) {
+										nodeList.put(p, cost);
+
+										qu.clear();
+										break;
+									}
+								}
+							}
+							level++;
+							// for (int p : ) {
+							qu.addAll(gMap.get(r));
+
+							// }
+							explored.add(r);
+
+						}
+					}
+				}
+			}
+			for (int node : nodeList.keySet()) {
+				if (node != start) {
+					System.out.print(nodeList.get(node) + " ");
+				}
+			}
+			System.out.print("\n");
+
+		}
+	}
+}

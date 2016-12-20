@@ -1,0 +1,70 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class TimeInWords {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int h = in.nextInt();
+		int m = in.nextInt();
+		Dictionary dict = new Hashtable();
+		dict.put(0, "o' clock");
+		dict.put(1, "one");
+		dict.put(2, "two");
+		dict.put(3, "three");
+		dict.put(4, "four");
+		dict.put(5, "five");
+		dict.put(6, "six");
+		dict.put(7, "seven");
+		dict.put(8, "eight");
+		dict.put(9, "nine");
+		dict.put(10, "ten");
+		dict.put(11, "eleven");
+		dict.put(12, "twelve");
+
+		Dictionary dict2 = new Hashtable();
+
+		dict2.put(1, "one minute");
+		dict2.put(2, "two minutes");
+		dict2.put(3, "three minutes");
+		dict2.put(4, "four minutes");
+		dict2.put(5, "five minutes");
+		dict2.put(6, "six minutes");
+		dict2.put(7, "seven minutes");
+		dict2.put(8, "eight minutes");
+		dict2.put(9, "nine minutes");
+		dict2.put(10, "ten minutes");
+		dict2.put(11, "eleven minutes");
+		dict2.put(12, "twelve minutes");
+		dict2.put(13, "thirteen minutes");
+		dict2.put(14, "fourteen minutes");
+		dict2.put(15, "quarter");
+		dict2.put(16, "sixteen minutes");
+		dict2.put(17, "seventeen minutes");
+		dict2.put(18, "eighteen minutes");
+		dict2.put(19, "nineteen minutes");
+		dict2.put(20, "twenty minutes");
+		dict2.put(21, "twenty one minutes");
+		dict2.put(22, "twenty two minutes");
+		dict2.put(23, "twenty three minutes");
+		dict2.put(24, "twenty four minutes");
+		dict2.put(25, "twenty five minutes");
+		dict2.put(26, "twenty six minutes");
+		dict2.put(27, "twenty seven minutes");
+		dict2.put(28, "twenty eight minutes");
+		dict2.put(29, "twenty nine minutes");
+		dict2.put(30, "half");
+
+		if (m == 0) {
+			System.out.println(dict.get(h) + " o' clock");
+		} else if (m <= 30) {
+			System.out.println(dict2.get(m) + " past " + dict.get(h));
+		} else {
+			System.out.println(dict2.get(m) + " past " + dict.get(h));
+		}
+
+	}
+}

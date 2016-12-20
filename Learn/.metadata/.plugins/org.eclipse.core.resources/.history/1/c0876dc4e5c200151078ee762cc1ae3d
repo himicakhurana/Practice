@@ -1,0 +1,78 @@
+class LinkNode {
+	int value;
+	LinkNode next;
+
+	LinkNode(int val) {
+		this.value = val;
+	}
+
+	LinkNode(LinkNode val) {
+		this(val.value);
+	}
+}
+
+public class MergeLinkList {
+
+	public static void main(String args[]) {
+		LinkNode one = new LinkNode(1);
+
+		LinkNode three = new LinkNode(3);
+		one.next = three;
+		LinkNode five = new LinkNode(5);
+		three.next = five;
+
+		LinkNode two = new LinkNode(2);
+
+		LinkNode four = new LinkNode(4);
+		two.next = four;
+		LinkNode six = new LinkNode(6);
+		four.next = six;
+		merge(one, two);
+	}
+
+	private static void merge(LinkNode one, LinkNode two) {
+		// TODO Auto-generated method stub
+		if (one == null || two == null)
+			return;
+		LinkNode prevmergeList = new LinkNode(-1);
+		LinkNode prev = prevmergeList;
+
+		while (one != null && two != null) {
+			if (one.value < two.value) {
+
+				prev = new LinkNode(one);
+				prev = prev.next;
+
+				one = one.next;
+			} else {
+
+				prev = new LinkNode(two);
+				prev = prev.next;
+
+				two = two.next;
+
+			}
+
+		}
+		if (one != null) {
+			prev.next=one;
+
+			}
+
+		}
+
+		else if (two != null) {
+			while (two != null) {
+				prev = new LinkNode(two);
+				two = two.next;
+				prev = prev.next;
+
+			}
+		}
+		prevmergeList = prevmergeList.next;
+		while (prevmergeList != null) {
+			System.out.println(prevmergeList.value);
+			prevmergeList = prevmergeList.next;
+		}
+	}
+}

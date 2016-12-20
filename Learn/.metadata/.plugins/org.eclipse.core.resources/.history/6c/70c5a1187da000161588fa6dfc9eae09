@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main2 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String s;
+		String str[] = null;
+		if ((s = in.readLine()) != null) {
+			str = s.split("\\|");
+		}
+		System.out.println(str.length);
+		Map<String, String> map = new HashMap<>();
+
+		for (String p : str) {
+			p = p.toLowerCase();
+			p = p.trim();
+			p.replaceAll("\\s", " ");
+			//p = p.replaceAll("^[a-z0-9]", " ");
+			System.out.println(p);
+		}
+	}
+}

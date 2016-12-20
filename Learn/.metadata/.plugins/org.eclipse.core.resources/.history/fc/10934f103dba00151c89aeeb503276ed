@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class KaprekarNumber {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int i = in.nextInt();
+		int j = in.nextInt();
+		for (int p = i; p <= j; p++) {
+			if (isKapekar(p)) {
+				System.out.print(p);
+			}
+
+		}
+		System.out.println("");
+	}
+
+	private static boolean isKapekar(int p) {
+		long square = (long) Math.pow(p, 2);
+		String sq = Long.toString(square);
+		int len=sq.length();
+		if (sq.length() % 2 == 0) {
+	if(p==Long.parseLong(sq.subSequence(0,len/2-1 ))+Long.parseLong(sq.substring(len/2,len-1))){
+		return true;
+	}
+		} else {
+
+		}
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main2 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String s;
+		String str[] = null;
+		if ((s = in.readLine()) != null) {
+			str = s.split("\\|");
+		}
+		System.out.println(str.length);
+		Map<String, String> map = new HashMap<>();
+
+		for (String p : str) {
+			String x = p;
+			p = p.toLowerCase();
+			p = p.trim();
+			p = p.replaceAll("\\s+", " ");
+			p = p.replaceAll("[^a-z0-9\\s]", "");
+			
+		
+			if (mapContainment2(map, p) != null) {
+				System.out.println(p);
+				System.out.println("ss");
+			//	map.remove(mapContainment2(map, p));	
+			}
+			if (!map.containsKey(p))
+				map.put(p, x);
+			/*if (mapContainment2(map, p) != null) {
+				System.out.println(p);
+				if (!map.containsKey(p))
+					map.put(p, x);
+			}*/
+		}
+		System.out.println(map);
+	}
+
+	private static String mapContainment(Map<String, String> map, String p) {
+		for (String s : map.keySet()) {
+
+			if (s.contains(p)) {
+				return null;
+			}
+
+		}
+		return p;
+	}
+
+	private static String mapContainment2(Map<String, String> map, String p) {
+		for (String s : map.keySet()) {
+			if (p.contains(s)) {
+				return s;
+			}
+
+		}
+		return null;
+	}
+}

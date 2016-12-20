@@ -1,0 +1,56 @@
+public class LongSubs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * System.out.println(lengthOfLongestSubstring("c"));
+		 */
+		System.out.println(longestPalindrome("aaabaaaa"));
+	}
+
+	public int lengthOfLongestSubstring(String s) {
+		if (s.length() == 1) {
+			return 1;
+		}
+		int maxlen = 0;
+		for (int i = 0; i < s.length() - 1; i++) {
+			for (int j = s.length(); j >= i; j--) {
+				String s2 = s.substring(i, j);
+				if (validString(s2)) {
+					if (maxlen < s2.length()) {
+						maxlen = s2.length();
+					}
+				}
+			}
+		}
+
+		return maxlen;
+	}
+
+	private static boolean validString(String s2) {
+		for (int i = 0; i < s2.length(); i++) {
+			if (s2.lastIndexOf(s2.charAt(i)) > i) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static boolean validStringPalindrome(String s2) {
+		StringBuilder sb = new StringBuilder(s2);
+		return sb.reverse().toString().equals(s2);
+	}
+
+	public static String longestPalindrome(String s) {
+		String maxString = "";
+		if (s.length() == 1) {
+			return s;
+		}
+		int i=0;
+		int j=s.length()-1;
+		
+
+		return maxString;
+	}
+
+}

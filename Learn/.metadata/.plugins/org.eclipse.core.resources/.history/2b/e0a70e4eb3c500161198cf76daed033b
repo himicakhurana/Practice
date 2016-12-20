@@ -1,0 +1,19 @@
+public class HammingDistance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		System.out.println(hammingDistance(73, 93));
+	}
+
+	public static int hammingDistance(int x, int y) {
+		int res = 0;
+		System.out.println();
+		Integer.toBinaryString(x).toCharArray()
+		System.out.println(Integer.toBinaryString(y));
+		res = Math.abs(Integer.toBinaryString(x).compareTo(
+				Integer.toBinaryString(y)));
+		return res;
+	}
+
+}

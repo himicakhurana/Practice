@@ -1,0 +1,7 @@
+public class MergeLinkList{
+	class Node{
+		int value; 
+		Node next;
+		
+	}
+}

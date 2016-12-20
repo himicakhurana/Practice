@@ -1,0 +1,16 @@
+public class LongSubs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public int lengthOfLongestSubstring(String s) {
+		for (int i = 0; i < s.length(); i++) {
+			for (int j = i+1; j < s.length(); i++) {
+			
+s.substring(beginIndex, endIndex)
+		}
+		return 0;
+	}
+}

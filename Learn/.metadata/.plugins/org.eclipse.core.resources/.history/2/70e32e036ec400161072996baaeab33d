@@ -1,0 +1,66 @@
+public class AddTwoNumbers {
+	/**
+	 * Definition for singly-linked list.
+	 */
+	public static class ListNode {
+		int val;
+		ListNode next;
+
+		public ListNode(int x) {
+			val = x;
+		}
+	}
+
+	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+		int n1 = 0, n2 = 0;
+		n1 = getNumber(l1);
+		n2 = getNumber(l2);
+		ListNode l = new ListNode(0);
+		ListNode p = l;
+		n1 = n1 + n2;
+		int reverse = 0;
+		while (n1 != 0) {
+			reverse = reverse * 10;
+			reverse = reverse + n1 % 10;
+			int x = n1 % 10;
+			System.out.println(x);
+			n1 = n1 / 10;
+		}
+		while (reverse != 0) {
+			int x = reverse % 10;
+			System.out.println(x);
+			reverse = reverse / 10;
+			l.next = new ListNode(x);
+			l = l.next;
+		}
+
+		ListNode pp = p.next;
+		while (pp != null) {
+			System.out.println(pp.val);
+			pp = pp.next;
+		}
+		return p.next;
+
+	}
+
+	static int getNumber(ListNode l1) {
+		int number = 0, x = 0;
+		while (l1 != null) {
+			x = (int) (x + (Math.pow(10, number)) * l1.val);
+			l1 = l1.next;
+			number++;
+		}
+
+		return x;
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListNode l = new ListNode(2);
+		l.next = new ListNode(4);
+		l.next.next = new ListNode(3);
+		addTwoNumbers(l, l);
+	}
+
+}

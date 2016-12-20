@@ -1,0 +1,29 @@
+class LinkNode {
+	int value;
+	LinkNode next;
+
+	LinkNode(int val) {
+		this.value = val;
+	}
+}
+
+public class MergeLinkList {
+
+	public static void main(String args[]) {
+		LinkNode one = new LinkNode(1);
+
+		LinkNode three = new LinkNode(3);
+		one.next = three;
+		LinkNode five = new LinkNode(3);
+		three.next = five;
+		
+		
+		LinkNode two = new LinkNode(2);
+
+		LinkNode four = new LinkNode(4);
+		two.next = four;
+		LinkNode six = new LinkNode(6);
+		four.next = six;
+	}
+
+}

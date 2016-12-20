@@ -1,0 +1,23 @@
+import java.io.*;
+
+public class Main2 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String s;
+		String str[] = null;
+		while ((s = in.readLine()) != null) {
+			str = s.split("|");
+		}
+		Map<String,String>;
+		for (String p : str) {
+			
+			The case of alphabetic characters should be ignored
+
+			Leading and trailing whitespace should be ignored
+
+			Any other block of contiguous whitespace should be treated as a single space
+
+			non-alphanumeric character should be ignored, white space should be retained
+		}
+	}
+}

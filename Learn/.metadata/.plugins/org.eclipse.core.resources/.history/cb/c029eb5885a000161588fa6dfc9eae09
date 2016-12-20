@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main3 {
+  public static void main(String[] args) throws IOException {
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    String s;
+    Map<String,String> relMap= new HashMap<>();
+    String rel[]=null;
+    while ((s = in.readLine()) != null) {
+    	rel=s.split(",");
+    }
+    for(String r:rel){
+    	String res[]=r.split("->")
+    	relMap
+    }
+  }
+}

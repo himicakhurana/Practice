@@ -1,0 +1,69 @@
+import java.io.*;
+import java.util.*;
+
+public class InsertSort2 {
+
+	public static void insertionSortPart2(int[] ar, int s) {
+		// Fill up the code for the required logic here
+		// Manipulate the array as required
+		// The code for Input/Output is already provided
+		for (int i = 1; i < s; i++) {
+			int x = ar[i];
+			place(ar, i,x);
+			printArray(ar);
+
+		}
+	}
+
+	private static void place(int[] arr, int y,int x) {
+		arr[y - 1] = arr[y - 2];
+		
+		boolean placed = false;
+		mloop: for (int i = y - 2; i > -1; i--) {
+			// TODO Auto-generated method stub
+			//System.out.println(i);
+
+			if (x <= arr[i]) {
+				arr[i+1] = arr[i];
+
+			} else if (x >= arr[i] && !placed) {
+				placed = true;
+				arr[i+1] = x;
+			//	printArray(arr, y);
+
+				break;
+
+			}
+			
+
+		//	printArray(arr, y);
+		}
+		if(!placed){
+			placed = true;
+			arr[0] = x;
+		//	printArray(arr, y);
+
+	
+		}
+
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int s = in.nextInt();
+		int[] ar = new int[s];
+		for (int i = 0; i < s; i++) {
+			ar[i] = in.nextInt();
+		}
+		insertionSortPart2(ar, s);
+
+	}
+
+	private static void printArray(int[] ar) {
+		for (int n : ar) {
+			System.out.print(n + " ");
+		}
+		System.out.println("");
+	}
+}

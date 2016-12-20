@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main2 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String s;
+		String str[] = null;
+		while ((s = in.readLine()) != null) {
+			str = s.split("|");
+		}
+		Map<String,String> map=new HashMap<>();
+		
+		for (String p : str) {
+		p=	p.toLowerCase();
+		p=	p.trim();
+
+			Leading and trailing whitespace should be ignored
+
+			Any other block of contiguous whitespace should be treated as a single space
+
+			non-alphanumeric character should be ignored, white space should be retained
+		}
+	}
+}

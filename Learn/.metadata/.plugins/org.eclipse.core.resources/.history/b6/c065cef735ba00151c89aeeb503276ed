@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class TimeInWords {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int h = in.nextInt();
+		int m = in.nextInt();
+		Dictionary hour = new Hashtable();
+		dict.put(0, "o' clock");
+		dict.put(1, "one");
+		dict.put(2, "two");
+		dict.put(3, "three");
+		dict.put(4, "four");
+		dict.put(5, "five");
+		dict.put(6, "six");
+		dict.put(7, "seven");
+		dict.put(8, "eight");
+		dict.put(9, "nine");
+		dict.put(10, "ten");
+		dict.put(11, "eleven");
+		dict.put(12, "twelve");
+		if (m == 0) {
+			System.out.println(dict.get(h).toString() + dict.get(0).toString());
+		}
+		else if(m==15){
+			System.out.println("quater past "+dict.get(h).toString());
+		} 
+		else	if(m<30){
+			
+		}
+		if(m==30){
+			System.out.println("half past "+dict.get(h).toString());
+
+		}
+		if(m>30&&m!=45){
+			System.out.println(dict.get(60-m)+ minutes to
+		}
+
+	}
+}

@@ -1,0 +1,18 @@
+public class MergeLinkList {
+	
+	
+	public static void main(String args[]){
+		Node2 one= new Node2(1);
+		int three=new Node2(3);
+		
+	}
+	 public class Node2 {
+			int value;
+			Node next;
+
+			Node2(int val) {
+				this.value = val;
+			}
+		}
+		
+}

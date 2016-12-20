@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main2 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String s;
+		String str[] = null;
+		if ((s = in.readLine()) != null) {
+			str = s.split("\\|");
+		}
+		System.out.println(str.length);
+		Map<String, String> map = new HashMap<>();
+
+		for (String p : str) {
+			String x = p;
+			p = p.toLowerCase();
+			p = p.trim();
+			p = p.replaceAll("\\s+", " ");
+			p = p.replaceAll("[^a-z0-9\\s]", "");
+			if (!map.containsKey(p)) {
+				System.out.println(p);
+				String s2 = mapContainment(map, p);
+				System.out.println(s2);
+
+				if (s2.compareTo("done")!=0) {
+					map.remove(s2);
+					
+				}
+			}
+		}
+		System.out.println(map);
+	}
+
+	private static String mapContainment(Map<String, String> map, String p) {
+		for (String s : map.keySet()) {
+			if (p.contains(s)) {
+				return s;
+			} else {
+				if (s.contains(p)) {
+					return null;
+				}
+			}
+		}
+		return null;
+	}
+}

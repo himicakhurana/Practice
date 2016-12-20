@@ -1,0 +1,78 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class TimeInWords {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int h = in.nextInt();
+		int m = in.nextInt();
+		Dictionary dict = new Hashtable();
+		dict.put(0, "o' clock");
+		dict.put(1, "one");
+		dict.put(2, "two");
+		dict.put(3, "three");
+		dict.put(4, "four");
+		dict.put(5, "five");
+		dict.put(6, "six");
+		dict.put(7, "seven");
+		dict.put(8, "eight");
+		dict.put(9, "nine");
+		dict.put(10, "ten");
+		dict.put(11, "eleven");
+		dict.put(12, "twelve");
+		
+		Dictionary dict2 = new Hashtable();
+
+		dict2.put(1,"one minute");
+		    2,"two minutes");
+		    3,"three minutes");
+		    4,"four minutes");
+		    5,"five minutes");
+		    6,"six minutes");
+		    7,"seven minutes");
+		    8,"eight minutes");
+		    9,"nine minutes");
+		    10,"ten minutes");
+		    11,"eleven minutes");
+		    12,"twelve minutes");
+		    13,"thirteen minutes");
+		    14,"fourteen minutes");
+		    15,"quarter");
+		    16,"sixteen minutes");
+		    17,"seventeen minutes");
+		    18,"eighteen minutes");
+		    19,"nineteen minutes");
+		    20,"twenty minutes");
+		    21,"twenty one minutes");
+		    22,"twenty two minutes");
+		    23,"twenty three minutes");
+		    24,"twenty four minutes");
+		    25,"twenty five minutes");
+		    26,"twenty six minutes");
+		    27,"twenty seven minutes");
+		    28,"twenty eight minutes");
+		    29,"twenty nine minutes");
+		    30,"half");
+		if (m == 0) {
+			System.out.println(dict.get(h).toString() + dict.get(0).toString());
+		}
+		else if(m==15){
+			System.out.println("quater past "+dict.get(h).toString());
+		} 
+		else	if(m<30){
+			
+		}
+		if(m==30){
+			System.out.println("half past "+dict.get(h).toString());
+
+		}
+		if(m>30&&m!=45){
+			System.out.println(dict.get(60-m)+ minutes to
+		}
+
+	}
+}

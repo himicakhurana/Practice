@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class KaprekarNumber {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int i = in.nextInt();
+		int j = in.nextInt();
+for(int p=i;p<=j;p++){
+	if(isKapekar(p)){
+		System.out.print();
+	}
+	
+}
+System.out.println("");
+	}
+
+}
